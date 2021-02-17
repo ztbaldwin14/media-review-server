@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         ownerid: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            // allowNull: false
         },
     }))
     return Movies;
