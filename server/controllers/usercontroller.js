@@ -22,7 +22,7 @@ router.post("/register", function (req, res) {
         sessionToken: token,
       });
     })
-    .catch((err) => res.status(500).json({ error: err }));
+    .catch((err) => res.status(502).json({ error: err }));
 });
 
 /* *****************

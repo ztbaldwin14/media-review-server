@@ -10,11 +10,7 @@ sequelize.sync();
 app.use(require("./middleware/headers"))
 app.use(express.json());
 
-
-app.use(require("./middleware/headers"));
-app.use(express.json());
 app.use("/movies", movies);
-
 app.use("/user", user);
 
 app.listen(3000, function () {
