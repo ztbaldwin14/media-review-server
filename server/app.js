@@ -10,9 +10,6 @@ sequelize.sync();
 app.use(require("./middleware/headers"))
 app.use(express.json());
 
-
-app.use(require("./middleware/headers"));
-app.use(express.json());
 app.use("/movies", movies);
 
 app.use("/user", user);
@@ -20,3 +17,5 @@ app.use("/user", user);
 app.listen(3000, function () {
   console.log("App is listening on port 3000");
 });
+
+
