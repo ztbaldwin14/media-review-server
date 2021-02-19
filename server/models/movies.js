@@ -22,10 +22,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        stars: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
+        // stars: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false
+        // },
         ownerid: {
             type: DataTypes.INTEGER,
             // allowNull: false
