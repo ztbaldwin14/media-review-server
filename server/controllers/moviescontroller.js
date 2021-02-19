@@ -11,7 +11,7 @@ router.post('/create', validateSession, (req, res) => {  /*12.3.3*/
         description: req.body.movies.description,
         actors: req.body.movies.actors,
         rating: req.body.movies.rating,
-        stars: req.body.movies.stars,
+        // stars: req.body.movies.stars,
         ownerid: req.user.id,
     }
     Movies.create(movieEntry)
@@ -19,7 +19,7 @@ router.post('/create', validateSession, (req, res) => {  /*12.3.3*/
         .catch((err) => res.status(502).json({ error: err }))
 });
 /* GET ALL ENTRIES */
-router.get("/", (req, res) => {
+router.get("/", validateSession, (req, res) => {
     Movies.findAll()
     .then(movies => res.status(200).json(movies))
     .catch(err => res.status(500).json({ error: err }))
@@ -50,7 +50,7 @@ router.put("/:id", validateSession, function (req, res) {
         description: req.body.movies.description,
         actors: req.body.movies.actors,
         rating: req.body.movies.rating,
-        stars: req.body.movies.stars,
+        // stars: req.body.movies.stars,
         ownerid: req.user.id,
     };
 
