@@ -1,7 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
 
     const Movies = (sequelize.define('movie', {
-
         title: {
             type: DataTypes.STRING, 
             allowNull: false
@@ -22,13 +21,14 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        // stars: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false
-        // },
+        review: {
+            type: DataTypes.STRING(2000),
+        },
+        stars: {
+            type: DataTypes.INTEGER,
+        },
         ownerid: {
             type: DataTypes.INTEGER,
-            // allowNull: false
         },
     }))
     return Movies;
