@@ -48,7 +48,9 @@ router.put("/:id", validateSession, function (req, res) {
         description: req.body.movies.description,
         actors: req.body.movies.actors,
         rating: req.body.movies.rating,
-        ownerid: req.user.id,
+        review: req.body.movies.review,
+        stars: req.body.movies.stars,
+        ownerid: req.user.id
     };
 
     const query = { where: { id: req.params.id, ownerid: req.user.id } };
@@ -66,17 +68,17 @@ router.delete("/:id", validateSession, function (req, res) {
         .catch((err) => res.status(500).json({ error: err }));
 });
 
-router.put('/review/:id', validateSession, (req, res) => {
-    const movieToReview = {
-        review: req.body.movies.review,
-        stars: req.body.movies.stars
-    }
+// router.put('/review/:id', validateSession, (req, res) => {
+//     const movieToReview = {
+//         review: req.body.movies.review,
+//         stars: req.body.movies.stars
+//     }
 
-    const query = { where: { id: req.params.id, ownerid: req.user.id }};
+//     const query = { where: { id: req.params.id, ownerid: req.user.id }};
 
-    Movies.update(movieToReview, query)
-        .then((review) => res.status(200).json(review))
-        .catch((err) => res.status(500).json({ error: err }))
-});
+//     Movies.update(movieToReview, query)
+//         .then((review) => res.status(200).json(review))
+//         .catch((err) => res.status(500).json({ error: err }))
+// });
 
 module.exports = router;
