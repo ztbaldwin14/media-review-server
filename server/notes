@@ -1,1 +1,5 @@
 https://reelreviewsserver.herokuapp.com/
+
+https://reelreviewsclient.herokuapp.com/ 
+
+npm run build every time you deploy
