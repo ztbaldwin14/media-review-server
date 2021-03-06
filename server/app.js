@@ -13,6 +13,6 @@ app.use(express.json());
 app.use("/movies", movies);
 app.use("/user", user);
 
-app.listen(3000, function () {
-  console.log("App is listening on port 3000");
+app.listen(process.env.PORT, function () {
+  console.log(`Server is listening on Port ${process.env.PORT}`);
 });
